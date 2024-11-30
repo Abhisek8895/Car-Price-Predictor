@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Costum CSS-->
+    <link href="{{ url_for('static', filename= 'css/style.css') }}" rel="stylesheet" />
+
+    <!--Costum JS-->
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+
+    <title>Car Price Predictor</title>
+  </head>
+  <body class='bg-dark'>
+
+    <div class="container">
+        
+            <div class="card mt-50" >
+                <div class = 'card-header'>
+                    <div style="text-align:center">
+                        <h1>Welcome To Car Price Predictor</h1>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post" accept-charset="utf-8" onsubmit='year_check()'>
+                        
+                        <div style='text-align:center; padding: 10px;'>
+                            <label><b>Select Company: </b></label>
+                            <br>
+                            <select name="company" id="company" required = "1" onchange= "load_models(this.id,'car_model')">
+
+                                {% for company in companies %}
+                                    <option value="{{ company }}">{{ company }}</option>
+                                {% endfor %}
+                            
+                            </select>
+                        </div>
+                    
+                        
+                        <div style='text-align:center; padding: 10px;'>
+                            <label><b>Select Model: </b></label>
+                            <br>
+                            <select name="car_model" id="car_model" required = "1">                         
+                            </select>
+                        </div>
+                        
+                        <div style='text-align:center; padding: 10px;'>
+                            <label><b>Select Fuel Type: </b></label>
+                            <br>
+                            <select name="fuel_type" id="fule_type" required = "1">
+                                {% for fuel in fuel_type %}
+                                <option value="{{ fuel }}">{{ fuel }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div style='text-align:center; padding: 10px;'>
+                            <label><b>Enter Year Of Purchase: </b></label>
+                            <br>
+                            <input type="text" id="year_purchase" name="year_purchase" placeholder="YYYY" required>
+                        </div>
+                        
+                        <div style="padding: 10px; text-align:center">
+                            <label for="kilo_driven"><b>Enter Number Of Kilometers Driven: </b></label>
+                            <br>
+                            <input type="number" id="kilo_driven" name="kilo_driven" placeholder="Enter the kilometers driven" required = "1">
+                        </div>
+                                        
+                        <div style="padding: 10px; text-align:center">
+                            <button onClick="get_data()">Predict Price</button>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+            <div class="predictor">
+                <h2><span id="prediction"></span></h2>
+            </div>
+    </div>
+
+    <script>
+        function load_models(id,car_model_id)
+        {
+            var company = document.getElementById(id)
+            var car_model = document.getElementById(car_model_id)
+            
+            car_model.value = ""
+            car_model.innerHTML = ""
+
+            {% for company in companies %}
+                if(company.value == "{{company}}")
+                {
+                    {% for model in car_models %}
+                        {% if company in model %}
+                            var newOption = document.createElement("option")
+                            newOption.value = "{{ model }}"
+                            newOption.innerHTML = "{{ model }}"
+                            car_model.options.add(newOption)
+                        {% endif %}
+                    {% endfor %}
+                }
+            {% endfor %}
+        }
+
+    </script>
+    
+  </body>
+
+
+
+</html>

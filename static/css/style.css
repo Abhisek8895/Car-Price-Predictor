@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    /* margin-top: 30px; You can adjust this value as needed */
+    padding: 0; /* Ensure there's no extra padding */
+    padding-top: 5px;
+}
+
+
+label {
+    font-size: large;
+}
+
+.bg-dark {
+    background: linear-gradient(#919b9e,#515c52);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 32rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
+    margin-top: 5px;
+}
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.card-header {
+    text-align: center;
+}
+.predictor{
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    left: 50%;
+}
