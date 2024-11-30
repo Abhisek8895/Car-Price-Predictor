@@ -59,11 +59,9 @@ The dataset, `car_data.csv`, contains the following columns:
 - **Flask**: For building the web application.
 - **Machine Learning**:
   - Linear Regression
-  - Ridge Regression
 - **Libraries**: 
   - `pandas` for data manipulation.
   - `numpy` for numerical computations.
-  - `matplotlib` and `seaborn` for data visualization.
   - `scikit-learn` for building and evaluating the machine learning models.
   - `pickle` for model serialization.
 
