@@ -77,7 +77,7 @@ The dataset, `car_data.csv`, contains the following columns:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/car-price-prediction.git
+   git clone https://github.com/Abhisek8895/car-price-prediction.git
    cd car-price-prediction
 2. Install dependencies:
 
