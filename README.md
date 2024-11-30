@@ -74,7 +74,6 @@ The dataset, `car_data.csv`, contains the following columns:
 ### Prerequisites
 
 - Python 3.7 or higher
-- Required libraries listed in `requirements.txt`.
 
 ### Steps
 
@@ -83,8 +82,6 @@ The dataset, `car_data.csv`, contains the following columns:
    git clone https://github.com/your-repo/car-price-prediction.git
    cd car-price-prediction
 2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
 
 3. Ensure the dataset car_data.csv is in the project directory.
 
