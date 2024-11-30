@@ -82,3 +82,12 @@ The dataset, `car_data.csv`, contains the following columns:
    ```bash
    git clone https://github.com/your-repo/car-price-prediction.git
    cd car-price-prediction
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+
+3. Ensure the dataset car_data.csv is in the project directory.
+
+4. Run the notebook:
+    ```bash
+    jupyter notebook Predictor.ipynb
