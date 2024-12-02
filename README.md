@@ -29,7 +29,7 @@ The dataset, `car_data.csv`, contains the following columns:
 
 - `name`: The name of the car.
 - `company`: The manufacturer of the car.
-- `year`: The year of manufacture.
+- `year`: The year of purchase.
 - `Price`: The selling price of the car.
 - `kms_driven`: The distance the car has been driven in kilometers.
 - `fuel_type`: The type of fuel used by the car.
@@ -46,7 +46,7 @@ The dataset, `car_data.csv`, contains the following columns:
 
 - Predicts car prices based on:
   - Brand
-  - Manufacturing year
+  - Purchasing year
   - Kilometers driven
   - Fuel type
 - Provides a user-friendly web application interface.
